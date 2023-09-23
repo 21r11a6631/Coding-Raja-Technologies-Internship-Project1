@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resume Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"/>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                margin: 0;
+                padding: 0;
+            }
+    
+            header {
+                background-color:rgb(160, 180, 180);
+                color: #fff;
+                text-align: center;
+                padding: 20px;
+            }
+    
+            h1 {
+                margin: 0;
+            }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="cv-form"><header>
+    <h1 class="text-center my=-2" style="padding-bottom:9px;">Resume Genetor</h1></header>
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            <h3 style="border:2px solid black;
+            background-color:lightsteelblue ;padding:5px;border-radius:5px;">Personal Information</h3>
+            <br>
+            <div class="form-group">
+                <label for="nameField">Your Name</label>
+                <input type="text" id="nameField" placeholder="Enter here" class="form-control"/>
+            </div>
+
+            <div class="form-group mt-2">
+                <label for="contactField">Your Contact</label>
+                <input type="text" id="contactField" placeholder="Enter here" class="form-control"/>
+            </div>
+
+            <div class="form-group mt-2">
+                <label for="addressField">Your Address </label>
+                <textarea id="addressField" placeholder="Enter here" class="form-control" rows="4"></textarea>
+            </div>
+
+            <div class="form-group mt-3">
+                <label for="">Select your photo</label>
+                <input id="imgField" type="file" class="form-control">
+            </div>
+
+            <p class="text-secondary my-3">Important Links</p>
+
+            <div class="form-group mt-2">
+                <label for="fbField">Facebook</label>
+                <input type="text" id="fbField" placeholder="Enter here" class="form-control"/>
+            </div>
+            <div class="form-group mt-2">
+                <label for="instaField">Instagram</label>
+                <input type="text" id="instaField" placeholder="Enter here" class="form-control"/>
+            </div>
+            <div class="form-group mt-2">
+                <label for="linkedField">LinkedIn</label>
+                <input type="text" id="linkedField" placeholder="Enter here" class="form-control"/>
+            </div>
+
+            <div class="form-group mt-2" id="lk">
+                <label for="">LanguagesKnown</label>
+                <textarea placeholder="Enter here" class="form-control lkField"/></textarea>
+
+                <div class="container text-center mt-2" id="lkAddButton">
+                    <button onclick="addNewLkField()" class="btn btn-primary btn-sm">Add</button>
+                </div>
+            </div>
+
+            <div class="form-group mt-2" id="hi">
+                <label for="">Hobbies or Interests</label>
+                <textarea placeholder="Enter here" class="form-control hiField"/></textarea>
+
+                <div class="container text-center mt-2" id="hiAddButton">
+                    <button onclick="addNewHiField()" class="btn btn-primary btn-sm">Add</button>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="col-md-6">
+            <h3 style="border:2px solid black;
+            background-color:lightsteelblue ;padding:5px;border-radius:5px;">Professional Information</h3>
+            <br>
+
+            <div class="form-group mt-2">
+                <label for="">Objective</label>
+                <textarea id="objectiveField" placeholder="Enter here" class="form-control"/></textarea>
+            </div>
+
+            <div class="form-group mt-2" id="we">
+                <label for="">Work Experience</label>
+                <textarea placeholder="Enter here" class="form-control weField"/></textarea>
+
+                <div class="container text-center mt-2" id="weAddButton">
+                    <button onclick="addNewWeField()" class="btn btn-primary btn-sm">Add</button>
+                </div>
+            </div>
+
+            <div class="form-group mt-2" id="aq">
+                <label for="">Academic Qualification</label>
+                <textarea placeholder="Enter here" class="form-control aqField"/></textarea>
+
+                <div class="container text-center mt-2" id="aqAddButton">
+                    <button onclick="addNewAqField()" class="btn btn-primary btn-sm">Add</button>
+                </div>
+            </div>
+
+            <div class="form-group mt-2" id="sk">
+                <label for="">Skills</label>
+                <textarea placeholder="Enter here" class="form-control skField"/></textarea>
+
+                <div class="container text-center mt-2" id="skAddButton">
+                    <button onclick="addNewSkField()" class="btn btn-primary btn-sm">Add</button>
+                </div>
+            </div>
+
+            <div class="form-group mt-2" id="in">
+                <label for="">Internships</label>
+                <textarea placeholder="Enter here" class="form-control inField"/></textarea>
+
+                <div class="container text-center mt-2" id="inAddButton">
+                    <button onclick="addNewInField()" class="btn btn-primary btn-sm">Add</button>
+                </div>
+            </div>
+
+            <div class="form-group mt-2" id="pr">
+                <label for="">Projects</label>
+                <textarea placeholder="Enter here" class="form-control prField"/></textarea>
+
+                <div class="container text-center mt-2" id="prAddButton">
+                    <button  onclick="addNewPrField()" class="btn btn-primary btn-sm">Add</button>
+                </div>
+            </div>
+            
+            <div class="form-group mt-2" id="ac">
+                <label for="">Achievements</label>
+                <textarea placeholder="Enter here" class="form-control acField"/></textarea>
+
+                <div class="container text-center mt-2" id="acAddButton">
+                    <button onclick="addNewAcField()" class="btn btn-primary btn-sm">Add</button>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+    <div class="container text-center mt-3">
+        <button onclick="generateCV()" class="btn btn-primary btn-lg">Generate Resume</button>
+    </div>
+    </div>
+    
+    <br>
+    <br>
+
+    <!--template-->
+    <div class="container" id="cv-template">
+        <div class="row">
+            <div class="col-md-4 text-center py-5 background">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcD5njo6POkUmcU7kQcyLTckktPH5gbTde2Q&usqp=CAU" alt="" id="imgT" class="img-fluid myimg"/>
+
+                <div class="container">
+                    <br>
+                    <p id="nameT1">Theressa Adina</p>
+                    <p id="contactT">+91-9912349988,+91-9912345682</p>
+                    <p id="addressT">No:1234/643 Sector 14,block 7,Newdelhi,India</p>
+                    <br>
+                    <hr/>
+                    <br>
+                    <p>
+                        <a id="fbT" href="#1">https://www.facebook.com/Adina23_10ui</a>
+                    </p>
+                    <p>
+                        <a id="instaT" href="#1">https://www.instagram.com/t_Adina23_k</a>
+                    </p>
+                    <p>
+                        <a id="linkedT" href="#1">https://www.linkedin.com/li_Adina_23</a>
+                    </p>
+                    <br>
+                    <hr/>
+                    <br>
+                    <ul type="none" id="lkT">
+                        <li>Hindi</li>
+                        <li>English</li>
+                        <li>French</li>
+                        <li>Spanish</li>
+                    </ul>
+                    <br>
+                    <hr/>
+                    <br>
+                    <ul type="none" id="hbT">
+                        <li>Volunteer Work</li>
+                        <li>Travel</li>
+                        <li>Teaching</li>
+                        <li>Sports</li>
+                        <li>Blogging</li>
+                        <li>Technology And Coding</li>
+                    </ul>
+                    <br>
+                    <hr/>
+                    <br>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h1 id="nameT2" class="text-center" style="font-weight: 980;">
+                    Theressa Adina
+                </h1>
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="objectiveT">
+                            Seeking a challenging software engineering position to apply my strong programming skills and passion for problem-solving in a collaborative team environment.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Work Experience</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="weT">
+                            <li>Software Engineer
+                                XYZ Tech Solutions, Anytown, USA
+                                January 2021 - Present</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Academic Qualification</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="aqT">
+                            <li>Software Engineer
+                                XYZ Tech Solutions, Anytown, USA
+                                January 2021 - Present</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Skills</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="skT">
+                            <li>Software Engineer
+                                XYZ Tech Solutions, Anytown, USA
+                                January 2021 - Present</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Internships</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="inT">
+                            <li>Software Engineer
+                                XYZ Tech Solutions, Anytown, USA
+                                January 2021 - Present</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Projects</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="pT">
+                            <li>Software Engineer
+                                XYZ Tech Solutions, Anytown, USA
+                                January 2021 - Present</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Acievements</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="acT">
+                            <li>Software Engineer
+                                XYZ Tech Solutions, Anytown, USA
+                                January 2021 - Present</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="container mt-3 text-center">
+                    <button onclick="printCV()" class="btn background">Print Resume</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+  </body>
+</html>
